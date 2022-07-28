@@ -1,0 +1,22 @@
+ul {
+  list-style: none;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.profile {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.profile:visited {
+  color: black;
+}

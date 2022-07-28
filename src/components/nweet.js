@@ -3,6 +3,9 @@ import dbService, { storageService } from '../fbase';
 import { deleteDoc, doc, updateDoc } from 'firebase/firestore';
 import { deleteObject, ref } from '@firebase/storage';
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash, faPencilAlt } from '@fortawesome/free-solid-svg-icons';
+import styles from './css/nweet.module.css';
 
 const Nweet = ({ nweetObj, isOwner }) => {
   const NweetTextRef = doc(dbService, 'nweets', `${nweetObj.id}`);
@@ -42,29 +45,41 @@ const Nweet = ({ nweetObj, isOwner }) => {
     setNewNweet(value);
   };
   return (
-    <div>
+    <div className={styles.container}>
       {editing ? (
         <>
           {' '}
-          <form onSubmit={onSubmit}>
+          <form onSubmit={onSubmit} className={styles.nweetEdit}>
             <input type="text" onChange={onChange} value={newNweet} required />
             <input type="submit" value="Update Nweet" />
           </form>
           <button onClick={toggleEditing}>Cancel</button>
         </>
       ) : (
-        <>
+        <div className={styles.nweet}>
           {nweetObj.imgfileURL && (
-            <img src={nweetObj.imgfileURL} width="100px" height="100px" />
+            <img src={nweetObj.imgfileURL} className={styles.nweet_img} />
           )}
-          <h4>{nweetObj.text}</h4>
-          {isOwner && (
-            <>
-              <button onClick={onDeleteClick}>Delete</button>
-              <button onClick={toggleEditing}>Edit</button>
-            </>
-          )}
-        </>
+          <div className={styles.content}>
+            <p className={styles.text}>{nweetObj.text}</p>
+            {isOwner && (
+              <div>
+                <span
+                  onClick={onDeleteClick}
+                  class={`${styles.actions} ${styles.delete}`}
+                >
+                  <FontAwesomeIcon icon={faTrash} />
+                </span>
+                <span
+                  onClick={toggleEditing}
+                  class={`${styles.actions} ${styles.edit}`}
+                >
+                  <FontAwesomeIcon icon={faPencilAlt} />
+                </span>
+              </div>
+            )}
+          </div>
+        </div>
       )}
     </div>
   );
