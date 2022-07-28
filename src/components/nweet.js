@@ -1,18 +1,28 @@
 import { async } from '@firebase/util';
-import { dbService } from 'fbase';
+import dbService, { storageService } from '../fbase';
 import { deleteDoc, doc, updateDoc } from 'firebase/firestore';
+import { deleteObject, ref } from '@firebase/storage';
 import React, { useState } from 'react';
 
 const Nweet = ({ nweetObj, isOwner }) => {
   const NweetTextRef = doc(dbService, 'nweets', `${nweetObj.id}`);
+  const desertRef = ref(storageService, nweetObj.imgfileURL);
   const [editing, setEditing] = useState(false);
   const [newNweet, setNewNweet] = useState(nweetObj.text);
 
   const onDeleteClick = async () => {
     const ok = window.confirm('Are you Sure you want to delete?');
+    console.log(nweetObj);
     if (ok) {
-      //delete
-      await deleteDoc(NweetTextRef);
+      try {
+        //delete
+        await deleteDoc(NweetTextRef);
+        if (nweetObj.imgfileURL !== '') {
+          await deleteObject(desertRef);
+        }
+      } catch (error) {
+        window.alert('삭제에 실패했습니다');
+      }
     }
   };
 
@@ -44,6 +54,9 @@ const Nweet = ({ nweetObj, isOwner }) => {
         </>
       ) : (
         <>
+          {nweetObj.imgfileURL && (
+            <img src={nweetObj.imgfileURL} width="100px" height="100px" />
+          )}
           <h4>{nweetObj.text}</h4>
           {isOwner && (
             <>

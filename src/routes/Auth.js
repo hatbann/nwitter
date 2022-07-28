@@ -1,5 +1,5 @@
 import { async } from '@firebase/util';
-import { authService, firebaseInstance } from 'fbase';
+import { authService, firebaseInstance } from '../fbase';
 import React, { useState } from 'react';
 import {
   createUserWithEmailAndPassword,
