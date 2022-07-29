@@ -10,15 +10,14 @@ const Navigtaion = ({ userObj }) => (
   <nav>
     <ul className={styles.container}>
       <li>
-        <Link to="/" style={{ marginRight: 10 }}>
-          <FontAwesomeIcon icon={faTwitter} color={'#04AAFF'} size="2x" />
+        <Link to="/" className={styles.Home}>
+          Home
         </Link>
       </li>
       <li>
         <Link to="/profile" className={styles.profile}>
           {' '}
-          <FontAwesomeIcon icon={faUser} color={'#04AAFF'} size="2x" />
-          <span style={{ marginTop: 10 }}>
+          <span>
             {userObj.displayName
               ? `${userObj.displayName}의 Profile`
               : 'Profile'}

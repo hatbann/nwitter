@@ -5,7 +5,20 @@ ul {
 .container {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  padding-top: 100px;
+  align-items: center;
+}
+
+.Home {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  margin-right: 20px;
+}
+.Home:visited {
+  color: #74e3ff;
+  text-align: center;
 }
 
 .profile {
@@ -15,8 +28,11 @@ ul {
   align-items: center;
   font-size: 12px;
   text-decoration: none;
+  text-align: center;
+  font-weight: 600;
+  font-size: 20px;
 }
 
 .profile:visited {
-  color: black;
+  color: #74e3ff;
 }

@@ -27,7 +27,9 @@ function App() {
   };
 
   return (
-    <>
+    <div
+      style={{ backgroundColor: '#fffbed', width: '100vw', height: '100vh' }}
+    >
       {init ? (
         <AppRouter
           refreshUser={refreshUser}
@@ -37,8 +39,10 @@ function App() {
       ) : (
         'Initializing....'
       )}
-      <footer>&copy; Hatban {new Date().getFullYear()}</footer>
-    </>
+      <footer style={{ textAlign: 'center', marginTop: '50px' }}>
+        &copy; Hatban {new Date().getFullYear()}
+      </footer>
+    </div>
   );
 }
 

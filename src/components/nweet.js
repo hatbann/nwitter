@@ -58,7 +58,17 @@ const Nweet = ({ nweetObj, isOwner }) => {
       ) : (
         <div className={styles.nweet}>
           {nweetObj.imgfileURL && (
-            <img src={nweetObj.imgfileURL} className={styles.nweet_img} />
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                fontWeight: '600',
+              }}
+            >
+              {' '}
+              <img src={nweetObj.imgfileURL} className={styles.nweet_img} />
+            </div>
           )}
           <div className={styles.content}>
             <p className={styles.text}>{nweetObj.text}</p>

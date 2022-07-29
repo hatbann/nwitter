@@ -9,7 +9,7 @@ import styles from './css/nweetFactory.module.css';
 
 const NweetFactory = ({ userObj }) => {
   const [nweet, setNweet] = useState('');
-  const [imgfile, setImgFile] = useState();
+  const [imgfile, setImgFile] = useState('');
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -68,28 +68,45 @@ const NweetFactory = ({ userObj }) => {
           maxLength={120}
           className={styles.inputMind}
         />
-        <label for="attach-file" className={styles.factoryInput_label}>
-          <span>Add Photo</span>
-          <FontAwesomeIcon icon={faPlus} />
-        </label>
         <input
-          id="attach-file"
-          style={{ display: 'none' }}
-          type="file"
-          accept="image/*"
-          onChange={onFileChange}
+          onSubmit={onSubmit}
+          type="submit"
+          value="Nweet"
+          className={styles.Nweet}
         />
       </div>
+      <label for="attach-file" className={styles.factoryInput_label}>
+        <span
+          style={{ fontSize: '12px', marginRight: '5px', color: ' #63dfff' }}
+        >
+          Add Photo
+        </span>
+        <FontAwesomeIcon
+          icon={faPlus}
+          style={{ fontSize: '10px', color: '#63dfff' }}
+        />
+      </label>
       <input
-        onSubmit={onSubmit}
-        type="submit"
-        value="Nweet"
-        className={styles.Nweet}
+        id="attach-file"
+        style={{ display: 'none' }}
+        type="file"
+        accept="image/*"
+        onChange={onFileChange}
       />
       {imgfile && (
-        <div>
-          <img src={imgfile} width="100px" height="100px" />
-          <button onClick={onClearImg}>Clear</button>
+        <div className={styles.attached}>
+          <img src={imgfile} className={styles.attachedImg} />
+          <div className={styles.imgClear} onClick={onClearImg}>
+            <span
+              style={{ fontSize: '11px', marginRight: '5px', color: '#383838' }}
+            >
+              Remove
+            </span>
+            <FontAwesomeIcon
+              icon={faTimes}
+              style={{ fontSize: '11px', color: '#383838' }}
+            />
+          </div>
         </div>
       )}
     </form>

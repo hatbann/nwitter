@@ -6,6 +6,8 @@ import dbService from '../fbase';
 import { collection, query, getDocs, where } from 'firebase/firestore';
 import { async } from '@firebase/util';
 
+import styles from './Profile.module.css';
+
 const Profile = ({ userObj, refreshUser }) => {
   const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
 
@@ -44,20 +46,22 @@ const Profile = ({ userObj, refreshUser }) => {
     refreshUser();
   };
 
-  useEffect(() => {}, []);
   return (
-    <>
+    <div className={styles.container}>
       <form onSubmit={onSubmit}>
         <input
           type="text"
           placeholder="Display Name"
           onChange={onChange}
           value={newDisplayName}
+          className={styles.inputName}
         />
-        <input type="submit" value="Update Profile" />
+        <input type="submit" value="Update Profile" className={styles.update} />
       </form>
-      <button onClick={onLogOutClick}>Log Out</button>
-    </>
+      <button onClick={onLogOutClick} className={styles.logout}>
+        Log Out
+      </button>
+    </div>
   );
 };
 export default Profile;

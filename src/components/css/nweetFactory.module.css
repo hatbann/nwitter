@@ -3,22 +3,23 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 50px;
 }
 
 .top {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .inputMind {
-  border-radius: 50%;
+  border-radius: 15px;
   width: 200px;
   height: 50px;
   text-align: center;
   border: 2px solid #9bebff;
-  margin-right: 20px;
+  margin-right: 15px;
 }
 
 .inputMind:focus::placeholder {
@@ -27,7 +28,7 @@
 
 .inputMind:focus {
   outline: none;
-  border-radius: 50%;
+  border-radius: 15px;
   width: 200px;
   height: 50px;
   text-align: center;
@@ -37,7 +38,7 @@
 .Nweet {
   border: none;
   border-radius: 50%;
-  width: 120px;
+  width: 100px;
   height: 40px;
   background-color: #c4ffed;
   cursor: pointer;
@@ -46,5 +47,23 @@
 }
 
 .factoryInput_label {
+  cursor: pointer;
+}
+
+.attached {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.attachedImg {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.imgClear {
   cursor: pointer;
 }
