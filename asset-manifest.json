@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/nwiiter/static/css/main.8c4d1339.css",
-    "main.js": "/nwiiter/static/js/main.53aa4948.js",
-    "index.html": "/nwiiter/index.html",
-    "main.8c4d1339.css.map": "/nwiiter/static/css/main.8c4d1339.css.map",
-    "main.53aa4948.js.map": "/nwiiter/static/js/main.53aa4948.js.map"
+    "main.css": "/hatbann/nwiiter/static/css/main.8c4d1339.css",
+    "main.js": "/hatbann/nwiiter/static/js/main.4eec9b8a.js",
+    "index.html": "/hatbann/nwiiter/index.html",
+    "main.8c4d1339.css.map": "/hatbann/nwiiter/static/css/main.8c4d1339.css.map",
+    "main.4eec9b8a.js.map": "/hatbann/nwiiter/static/js/main.4eec9b8a.js.map"
   },
   "entrypoints": [
     "static/css/main.8c4d1339.css",
-    "static/js/main.53aa4948.js"
+    "static/js/main.4eec9b8a.js"
   ]
 }
