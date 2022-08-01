@@ -36,10 +36,7 @@ const Auth = () => {
         result = await signInWithPopup(authService, provider);
         const credential = GithubAuthProvider.credentialFromResult(result);
       }
-      console.log(result);
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
 
   return (
