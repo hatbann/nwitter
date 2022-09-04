@@ -86,7 +86,15 @@ const AuthForm = (props) => {
             ></input>
           </div>
         </div>
-        <div>{error && <span className="authError">{error}</span>}</div>
+        <div>
+          {error && (
+            <span className="authError">
+              {error === 'Firebase: Error (auth/wrong-password).'
+                ? '비밀번호 오류'
+                : error}
+            </span>
+          )}
+        </div>
       </form>
     </div>
   );
