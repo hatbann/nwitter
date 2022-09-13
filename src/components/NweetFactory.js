@@ -75,7 +75,7 @@ const NweetFactory = ({ userObj }) => {
           className={styles.Nweet}
         />
       </div>
-      <label for="attach-file" className={styles.factoryInput_label}>
+      <label htmlFor="attach-file" className={styles.factoryInput_label}>
         <span
           style={{ fontSize: '12px', marginRight: '5px', color: ' #63dfff' }}
         >
