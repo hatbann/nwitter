@@ -6,7 +6,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './css/Navigation.module.css';
 
-const Navigtaion = ({ userObj, chat, setChat }) => (
+const Navigtaion = ({ userObj }) => (
   <nav>
     <ul className={styles.container}>
       <li>
@@ -23,17 +23,6 @@ const Navigtaion = ({ userObj, chat, setChat }) => (
               : 'Profile'}
           </span>
         </Link>
-      </li>
-      <li>
-        {chat ? (
-          <Link to="/">
-            <button onClick={() => setChat(!chat)}>홈으로 돌아가기</button>
-          </Link>
-        ) : (
-          <Link to="/chatroom">
-            <button onClick={() => setChat(!chat)}>채팅하기</button>
-          </Link>
-        )}
       </li>
     </ul>
   </nav>

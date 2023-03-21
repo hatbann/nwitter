@@ -31,7 +31,7 @@ const Nweet = ({ nweetObj, isOwner }) => {
 
   const toggleEditing = async () => setEditing((prev) => !prev);
 
-  const onSubmit = async (event) => {
+  const onEditSubmit = async (event) => {
     event.preventDefault();
     await updateDoc(NweetTextRef, {
       text: newNweet,
@@ -47,14 +47,16 @@ const Nweet = ({ nweetObj, isOwner }) => {
   return (
     <div className={styles.container}>
       {editing ? (
-        <>
+        <div className={styles.nweetEdit}>
           {' '}
-          <form onSubmit={onSubmit} className={styles.nweetEdit}>
+          <form>
             <input type="text" onChange={onChange} value={newNweet} required />
-            <input type="submit" value="Update Nweet" />
           </form>
-          <button onClick={toggleEditing}>Cancel</button>
-        </>
+          <div>
+            <button onClick={onEditSubmit}>Update Nweet</button>
+            <button onClick={toggleEditing}>Cancel</button>
+          </div>
+        </div>
       ) : (
         <div className={styles.nweet}>
           {nweetObj.imgfileURL && (

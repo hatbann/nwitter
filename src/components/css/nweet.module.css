@@ -34,6 +34,33 @@
 }
 
 .nweetEdit {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nweetEdit > form > input {
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 10px 0;
+}
+
+.nweetEdit > div {
+  width: 120px;
+}
+.nweetEdit > div button {
+  width: 100px;
+  border: none;
+  padding: 10px 5px;
+  background-color: #c4ffed;
+  color: #535353;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.nweetEdit > div button:first-child {
+  margin-bottom: 5px;
 }
 
 .actions {
