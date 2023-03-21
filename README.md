@@ -14,6 +14,7 @@
 - `HTML / CSS`
 - `Javascript`
 - `React`
+- `Firebase`
 <br>
 
 # 🛠 주요 기능
